@@ -1,1 +1,4 @@
-Hello
+<h1><%= current_user.email %>'s Tasks</h1>
+<div class="tasks">
+  <%= render current_user.tasks %>
+</div>

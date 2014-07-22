@@ -1,4 +1,4 @@
-class HomesController < ActionController::Base 
+class HomesController < ApplicationController
   def show
     @user = User.new
   end

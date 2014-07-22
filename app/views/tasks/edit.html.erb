@@ -1,6 +1,8 @@
-<h1>Edit Task</h1>
+<div class="form">
+  <h1>Edit Task</h1>
 
-<%= form_for @task do |form| %>
-  <%= render form, task: @task %>
-  <%= form.submit "Update task" %>
-<% end %>
+  <%= form_for @task do |form| %>
+    <%= render form, task: @task %>
+    <%= form.submit "Update task" %>
+  <% end %>
+</div>

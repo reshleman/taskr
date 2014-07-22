@@ -1,7 +1,30 @@
 <h1><%= current_user.email %>'s Tasks</h1>
 
-<%= link_to "New Task", new_task_path %>
+<div>
+  <%= form_for @task do |form| %>
+    <%= form.text_field :title, placeholder: "New Task" %>
+    <%= form.submit "Create Task" %>
+  <% end %>
+</div>
 
-<div class="tasks">
+<div id="tasks">
   <%= render current_user.tasks %>
 </div>
+
+<script type="text/javascript">
+  $(function() {
+    $("#new_task").submit(function() {
+      $.post(
+        "/tasks",
+        { task: // task[title] = "foo"
+          { title: $("#task_title").val() }
+        },
+        function(data) {
+          $("#tasks").prepend(data);
+          $("#task_title").val("");
+        }
+      );
+      return false;
+    });
+  });
+</script>

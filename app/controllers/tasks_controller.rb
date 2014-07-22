@@ -4,12 +4,10 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
-    if current_user.tasks << @task
-      redirect_to root_path
-    else
-      render :new
-    end
+    task = Task.new(task_params)
+    current_user.tasks << task
+
+    render task
   end
 
   def edit

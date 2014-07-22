@@ -44,7 +44,7 @@ a:hover {
   padding: 15px;
 }
 
-.tasks {
+#tasks {
   width: 800px;
   padding: 20px;
   margin: 0px auto;

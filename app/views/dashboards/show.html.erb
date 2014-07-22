@@ -1,4 +1,7 @@
 <h1><%= current_user.email %>'s Tasks</h1>
+
+<%= link_to "New Task", new_task_path %>
+
 <div class="tasks">
   <%= render current_user.tasks %>
 </div>

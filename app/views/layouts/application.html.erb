@@ -9,8 +9,14 @@
 <body>
 
 <div class="nav">
+  <div class="title">
+    <%= link_to "Shoutr", root_path %>
+  </div>
+
   <% if signed_in? %>
-    <%= link_to "Sign Out", session_path, method: :delete %>
+    <div class="sign_out">
+      <%= link_to "Sign Out", session_path, method: :delete %>
+    </div>
   <% end %>
 </div>
 

@@ -1,8 +1,11 @@
 <div class="task">
-  <h2><%= task.title %></h2>
-  <p><%= task.body %></p>
-</div>
-<div>
-  <%= link_to "Edit", edit_task_path(task) %>
-  <%= link_to "Done", task, method: :delete, data: { confirm: "Mark as complete?" } %>
+  <div class="task-links">
+    <%= link_to "Edit", edit_task_path(task) %>
+    <%= link_to "Done", task, method: :delete, data: { confirm: "Mark as complete?" } %>
+  </div>
+
+  <div class="task-content">
+    <h2><%= task.title %></h2>
+    <p><%= task.body %></p>
+  </div>
 </div>

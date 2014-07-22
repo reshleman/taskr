@@ -1,15 +1,83 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: arial;
+  background-color: #EEE;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 0 0 10px;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+  color: #555;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav {
+  background-color: #BBB;
+  padding: 10px 20px;
+  margin: 0;
+  box-shadow: 5px 3px 5px rgba(0,0,0,.3);
+}
+
+.title {
+  font-size: 1.4em;
+  display: inline-block;
+}
+
+.sign_out {
+  display: inline-block;
+  float: right;
+}
+
+.container {
+  padding: 15px;
+}
+
+.tasks {
+  width: 800px;
+  padding: 20px;
+  margin: 0px auto;
+}
+
+.task {
+  background-color: #CCC;
+  padding: 10px 15px;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+}
+
+.task-links {
+  float: right;
+  padding: 5px;
+}
+
+.task h2 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.task p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.form {
+  width: 400px;
+  background-color: #CCC;
+  padding: 10px 15px;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+}

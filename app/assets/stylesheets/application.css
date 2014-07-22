@@ -68,11 +68,6 @@ a:hover {
   margin: 0;
 }
 
-.task p {
-  margin: 0;
-  padding: 5px 0;
-}
-
 .form {
   width: 400px;
   background-color: #CCC;

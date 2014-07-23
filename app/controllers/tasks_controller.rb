@@ -7,7 +7,11 @@ class TasksController < ApplicationController
     task = Task.new(task_params)
     current_user.tasks << task
 
-    render task
+    if request.xhr?
+      render task
+    else
+      redirect_to root_path
+    end
   end
 
   def edit

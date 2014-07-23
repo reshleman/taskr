@@ -7,7 +7,11 @@ class TasksController < ApplicationController
     task = Task.new(task_params)
     current_user.tasks << task
 
-    render task
+    if request.xhr?
+      render task
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
@@ -27,7 +31,10 @@ class TasksController < ApplicationController
     task = current_user.tasks.find(params[:id])
     task.destroy
 
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js { render json: task }
+    end
   end
 
   private

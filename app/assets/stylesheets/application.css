@@ -68,6 +68,10 @@ a:hover {
   margin: 0;
 }
 
+form.edit_task {
+  display: none;
+}
+
 .form {
   width: 400px;
   background-color: #CCC;

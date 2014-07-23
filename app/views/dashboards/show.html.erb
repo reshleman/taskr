@@ -13,36 +13,39 @@
 
 <script type="text/javascript">
   $(function() {
-
-    $("#new_task").submit(function() {
-      $.post(
-        "/tasks",
-        { task: // task[title] = "foo"
-          { title: $("#task_title").val() }
-        },
-        function(data) {
-          $("#tasks").prepend(data);
-          $("#task_title").val("");
-        }
-      );
-      return false;
-    });
-
-    $("a.delete-task").click(function() {
-      var task_id = $(this).data("task");
-      $.ajax(
-        "/tasks/" + task_id,
-        {
-          type: "DELETE",
-          dataType: "json",
-          success: function(data) {
-            $("#task_" + task_id).fadeOut("slow", function() {
-              this.remove()
-            });
-          }
-        }
-      );
-      return false;
-    });
+    $("#new_task").submit(handleCreateTask);
+    $("a.delete-task").click(handleDeleteTask);
   });
+
+  function handleCreateTask() {
+    $.post(
+      "/tasks",
+      { task: // task[title] = "foo"
+        { title: $("#task_title").val() }
+      },
+      function(data) {
+        $("#tasks").prepend(data);
+        $("#task_title").val("");
+        $("a.delete-task").click(handleDeleteTask);
+      }
+    );
+    return false;
+  }
+
+  function handleDeleteTask() {
+    var task_id = $(this).data("task");
+    $.ajax(
+      "/tasks/" + task_id,
+      {
+        type: "DELETE",
+        dataType: "json",
+        success: function(data) {
+          $("#task_" + task_id).fadeOut("slow",function() {
+            this.remove()
+          });
+        }
+      }
+    );
+    return false;
+  }
 </script>

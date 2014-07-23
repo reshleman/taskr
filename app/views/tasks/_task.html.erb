@@ -4,7 +4,7 @@
     <%= link_to "Delete", task, method: :delete, remote: true, class: "delete-task", data: { task: "#{task.id}" } %>
   </div>
 
-  <div class="task-content">
-    <h2><%= task.title %></h2>
+  <div class="task-content" data-task="<%= task.id %>" id="<%= task.id %>">
+    <%= task.title %>
   </div>
 <% end %>

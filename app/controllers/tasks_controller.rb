@@ -14,11 +14,8 @@ class TasksController < ApplicationController
 
   def update
     @task = current_user.tasks.find(params[:id])
-    if @task.update(task_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
+    @task.update(task_params)
+    render json: @task
   end
 
   def destroy

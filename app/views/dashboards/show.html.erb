@@ -26,5 +26,21 @@
       );
       return false;
     });
+
+    $("a.delete-task").click(function() {
+      var task_id = $(this).data("task");
+      $.ajax(
+        "/tasks/" + task_id,
+        {
+          type: "DELETE",
+          success: function(data) {
+            $("#task_" + task_id).fadeOut("slow", function() {
+              this.remove()
+            });
+          }
+        }
+      );
+      return false;
+    });
   });
 </script>

@@ -27,7 +27,7 @@ class TasksController < ApplicationController
     task = current_user.tasks.find(params[:id])
     task.destroy
 
-    redirect_to root_path
+    render inline: "Success!"
   end
 
   private

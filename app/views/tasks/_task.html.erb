@@ -1,7 +1,7 @@
 <%= div_for task do %>
   <div class="task-links">
     <%= link_to "Edit", edit_task_path(task) %>
-    <%= link_to "Done", task, method: :delete, class: "delete-task", data: { task: "#{task.id}" } %>
+    <%= link_to "Delete", task, method: :delete, remote: true, class: "delete-task", data: { task: "#{task.id}" } %>
   </div>
 
   <div class="task-content">

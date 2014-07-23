@@ -4,14 +4,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    task = Task.new(task_params)
-    current_user.tasks << task
-
-    if request.xhr?
-      render task
-    else
-      redirect_to root_path
-    end
+    @task = Task.new(task_params)
+    current_user.tasks << @task
   end
 
   def edit
@@ -28,13 +22,8 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    task = current_user.tasks.find(params[:id])
-    task.destroy
-
-    respond_to do |format|
-      format.html { redirect_to root_path }
-      format.js { render json: task }
-    end
+    @task = current_user.tasks.find(params[:id])
+    @task.destroy
   end
 
   private

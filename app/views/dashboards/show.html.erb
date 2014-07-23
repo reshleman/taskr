@@ -13,6 +13,7 @@
 
 <script type="text/javascript">
   $(function() {
+
     $("#new_task").submit(function() {
       $.post(
         "/tasks",
@@ -33,6 +34,7 @@
         "/tasks/" + task_id,
         {
           type: "DELETE",
+          dataType: "json",
           success: function(data) {
             $("#task_" + task_id).fadeOut("slow", function() {
               this.remove()

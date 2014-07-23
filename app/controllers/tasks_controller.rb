@@ -27,7 +27,10 @@ class TasksController < ApplicationController
     task = current_user.tasks.find(params[:id])
     task.destroy
 
-    render inline: "Success!"
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js { render json: task }
+    end
   end
 
   private

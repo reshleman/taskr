@@ -1,2 +1,3 @@
-$("#task_<%= @task.id %>_content").text("<%=j @task.title %>").show();
+$("#edit_task_<%= @task.id %>").unbind("focusout");
 $("#edit_task_<%= @task.id %>").hide();
+$("#task_<%= @task.id %>_content").text("<%=j @task.title %>").show();
